@@ -41,7 +41,7 @@ async function generateArgentWallet() {
 		mnemonic: wallet.mnemonic.phrase,
 		pk: wallet.privateKey,
 		starknet_address: contractAddress.replace('0x', '0x0'),
-		starknet_key: BigInt(privateKey).toString()
+		starknet_key: privateKey.replace('0x', '0x0')
 	});
 }
 
