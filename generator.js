@@ -27,7 +27,7 @@ async function generateArgentWallet() {
     	const childNode = masterNode.derivePath(`m/44'/9004'/0'/0/0`)
 	const privateKey = `0x${ec.starkCurve.grindKey(childNode.privateKey)}`
 	const publicKey = ec.starkCurve.getStarkKey(privateKey);
-	const constructorcallData = CallData.compile({ owner: ec.starkCurve.getStarkKey(privateKey), guardian: 0})
+	const constructorCallData = CallData.compile({ owner: ec.starkCurve.getStarkKey(privateKey), guardian: 0})
 
 	const contractAddress = hash.calculateContractAddressFromHash(publicKey, argentXaccountClassHash, constructorCallData, 0)
 
